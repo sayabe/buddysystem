@@ -24,3 +24,8 @@ body {
     height: 70px;
     padding-top: 10px;
 }
+
+.list-group-item {
+    height: 102px;
+>>>>>>> 851f7a71134be3fe34caa91d56b0d43d57290c0a
+}
