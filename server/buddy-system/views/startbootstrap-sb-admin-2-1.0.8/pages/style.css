@@ -6,6 +6,18 @@ body {
     padding: 10px;
 }
 
-.navbar-brand {
+.navbar-default {
+    background-color: #ffaa80;
+}
+
+.navbar-default a {
+    color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
     font-family: 'Montserrat', sans-serif;
+}
+
+.panel-default>.panel-heading {
 }
