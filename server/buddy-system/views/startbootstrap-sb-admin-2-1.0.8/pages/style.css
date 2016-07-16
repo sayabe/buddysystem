@@ -17,7 +17,9 @@ body {
 .navbar-default .navbar-brand {
     color: white;
     font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
 }
 
-.panel-default>.panel-heading {
+.navbar {
+    height: 70px;
 }
