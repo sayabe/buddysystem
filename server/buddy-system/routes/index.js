@@ -4,11 +4,6 @@ var router = express.Router();
 
 var database = require('../database/database');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
 router.get('/home', function(req, res, next) {
 	console.log('home route start point');
 	var userID = req.query.userID;
@@ -23,7 +18,7 @@ router.get('/home', function(req, res, next) {
 
 	// Render view for homepage
 	console.log('home route end point');
-	res.render('index.html');
+	res.render('addNewTask.html');
 
 });
 
