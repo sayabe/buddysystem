@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/home/:userID', function(req, res, next) {
+router.get('/home', function(req, res, next) {
 	console.log('home route start point');
 	var userID = req.query.userID;
 	database.addTask('run', 0, 0, 0);
@@ -23,20 +23,20 @@ router.get('/home/:userID', function(req, res, next) {
 
 	// Render view for homepage
 	console.log('home route end point');
-	res.sendFile('dummy_page.html');
+	res.render('dummy_page.html');
 
 });
 
-router.get('/profile/:userID',function(req,res.next){
+router.get('/profile/:userID',function(req, res, next){
 	console.log('profile route start point');
 	var userID = req.query.userID;
 
-	//fetch profile 
+	//fetch profile
 
 	//fetch tasks
 	//fetch graph
 
-	//add task 
+	//add task
 	console.log('profile route end point');
 
 });
@@ -54,7 +54,7 @@ router.get('/yourBuddyList',function(req,res,next){
 
 router.get('/addNewTask',function(req,res,next){
 	console.log('addNewTask start point');
-	
+
 
 	//render the form
 
