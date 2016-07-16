@@ -4,6 +4,10 @@ var router = express.Router();
 
 var database = require('../database/database');
 
+router.get('/dashboard', function(req, res, next) {
+	res.render('startbootstrap-sb-admin-2-1.0.8/pages/login.html');
+})
+
 router.get('/home', function(req, res, next) {
 	console.log('home route start point');
 	var userID = req.query.userID;
