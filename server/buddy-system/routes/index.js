@@ -10,8 +10,8 @@ router.get('/login', function(req, res, next) {
 
 router.get('/home', function(req, res, next) {
 	console.log('home route start point');
-	var userID = req.query.userID;
-	database.addTask(userID,'run', 0, 0, 0);
+	
+	//database.addTask(userID,'run', 0, 0, 0);
 
 	// Fetch profile
 
@@ -21,10 +21,13 @@ router.get('/home', function(req, res, next) {
 	// Fetch random buddies
 
 	// Render view for homepage
+	
 	console.log('home route end point');
-	res.render('addNewTask.html');
+	
 
 });
+
+
 
 router.get('/profile/:userID',function(req, res, next){
 	console.log('profile route start point');
@@ -45,10 +48,8 @@ router.get('/profile/:userID',function(req, res, next){
 
 router.get('/yourBuddyList',function(req,res,next){
 	console.log('buddy list start point');
-	var userID = req.query.userID;
-
-
-	var buddyList = database.getBuddyList(userID);
+	/*var userID = req.query.userID;
+	var buddyList = database.getBuddyList(userID);*/
 	//fetch all your buddylists
 	/*res.render('yourBuddyList',{"data":buddyList})
 	var container = document.getElementById("container")
@@ -61,7 +62,7 @@ router.get('/yourBuddyList',function(req,res,next){
             </div>';
 */
 	// }
-
+	res.render('yourBuddyList.html')
 
 	console.log('buddy list end point');
 });
@@ -72,12 +73,13 @@ router.get('/addNewTask',function(req,res,next){
 	console.log('addNewTask start point');
 
 
-	//render the form
-
+	var userID = req.param('userID');
+	res.render('addNewTask.html',{title:'New Task'});
 
 	console.log('addNewTask end point');
 });
 
+/* assumed to have add task form*/
 router.post('/addNewTask',function(req,res,next){
 
 	console.log('addNewTask post start point');
@@ -87,8 +89,14 @@ router.post('/addNewTask',function(req,res,next){
 	start date
 	deadline
 	reward = none */
-	database.insertTask()
-
+	var taskName = req.body.taskName;
+	var userID = req.body.userID;
+	var startDate = req.body.StartDate;
+	var endDate = req.body.EndDate;
+	console.log(taskName+" "+userID);
+//	database.addTask(userID,taskName,startDate,endDate,0);
+	//database.insertTask()
+	res.render('addNewTask.html',{title:'Add New Task'})
 	console.log('addNewTask post start point');
 });
 

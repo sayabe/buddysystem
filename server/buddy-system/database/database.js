@@ -77,6 +77,7 @@ database.insertNewUser = function(name) {
 	new_user.Name = name;
 	new_user.save(function (err, nuser) {
 		if (err) console.log('Error while inserting new user', err);
+		console.log(nuser.id);
 		return nuser.id;
 	});
 };
