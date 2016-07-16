@@ -47,9 +47,20 @@ router.get('/yourBuddyList',function(req,res,next){
 	console.log('buddy list start point');
 	var userID = req.query.userID;
 
+
 	var buddyList = database.getBuddyList(userID);
 	//fetch all your buddylists
-	//res.render('yourBuddyList',{"data":buddyList})
+	/*res.render('yourBuddyList',{"data":buddyList})
+	var container = document.getElementById("container")
+	for(var i=0;i<buddyList.length;i++){
+		container.innerHTML += '<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="/images/"+database.getFirstName(buddyList[i])+".jpg" alt="">
+                <h3>'+database.getFirstName(buddyList[i])+'
+                </h3>
+            </div>';
+*/
+	}
+
 
 	console.log('buddy list end point');
 });
