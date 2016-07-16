@@ -23,3 +23,7 @@ body {
 .navbar {
     height: 70px;
 }
+
+.list-group-item {
+    height: 102px;
+}
