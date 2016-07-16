@@ -11,6 +11,8 @@ router.get('/login', function(req, res, next) {
 router.get('/home', function(req, res, next) {
 	console.log('home route start point');
 	
+	var userID = req.param('userID');
+	console.log(userID);
 	//database.addTask(userID,'run', 0, 0, 0);
 
 	// Fetch profile
@@ -21,7 +23,11 @@ router.get('/home', function(req, res, next) {
 	// Fetch random buddies
 
 	// Render view for homepage
-	
+	res.render('index.html');
+	document.getElementById("addNewTaskButton").onclick=function() {clickNewTask()};
+	function clickNewTask(){
+		res.redirect('addNewTask.html?userID='+userID);
+	}
 	console.log('home route end point');
 	
 
