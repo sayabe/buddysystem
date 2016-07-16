@@ -23,7 +23,7 @@ router.get('/home', function(req, res, next) {
 
 	// Render view for homepage
 	console.log('home route end point');
-	res.render('dummy_page.html');
+	res.render('index.html');
 
 });
 
@@ -73,6 +73,15 @@ router.post('/addNewTask',function(req,res,next){
 	reward = none */
 
 	console.log('addNewTask post start point');
+});
+
+router.post('/receiveForm',function(req,res,next){
+
+	console.log('receiveForm post start point');
+
+	console.log(req);
+
+	console.log('receiveForm post start point');
 });
 
 
