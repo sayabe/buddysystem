@@ -11,7 +11,7 @@ router.get('/dashboard', function(req, res, next) {
 router.get('/home', function(req, res, next) {
 	console.log('home route start point');
 	var userID = req.query.userID;
-	database.addTask('run', 0, 0, 0);
+	database.addTask(userID,'run', 0, 0, 0);
 
 	// Fetch profile
 
@@ -30,12 +30,15 @@ router.get('/profile/:userID',function(req, res, next){
 	console.log('profile route start point');
 	var userID = req.query.userID;
 
+	var userData = database.getProfile(userID);
 	//fetch profile
 
 	//fetch tasks
 	//fetch graph
 
 	//add task
+
+	//res.render('/profile',{data:userData})
 	console.log('profile route end point');
 
 });
@@ -44,7 +47,9 @@ router.get('/yourBuddyList',function(req,res,next){
 	console.log('buddy list start point');
 	var userID = req.query.userID;
 
+	var buddyList = database.getBuddyList(userID);
 	//fetch all your buddylists
+	//res.render('yourBuddyList',{"data":buddyList})
 
 	console.log('buddy list end point');
 });
@@ -70,6 +75,7 @@ router.post('/addNewTask',function(req,res,next){
 	start date
 	deadline
 	reward = none */
+	database.insertTask()
 
 	console.log('addNewTask post start point');
 });
@@ -82,7 +88,6 @@ router.post('/receiveForm',function(req,res,next){
 
 	console.log('receiveForm post start point');
 });
-
 
 
 module.exports = router;
