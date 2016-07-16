@@ -5,3 +5,7 @@ body {
 .navbar-top-links a{
     padding: 10px;
 }
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+}
