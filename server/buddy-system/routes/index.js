@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 var database = require('../database/database');
 
 /* GET home page. */
@@ -22,6 +23,7 @@ router.get('/home', function(req, res, next) {
 
 	// Render view for homepage
 	console.log('home route end point');
+	res.sendFile('dummy_page.html');
 
 });
 
