@@ -55,8 +55,9 @@ router.get('/yourBuddyList',function(req,res,next){
 	for(var i=0;i<buddyList.length;i++){
 		container.innerHTML += '<div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="/images/"+database.getFirstName(buddyList[i])+".jpg" alt="">
-                <h3>'+database.getFirstName(buddyList[i])+'
-                </h3>
+                <li>
+                        <a href="http://localhost:3000/profile?userID="+buddyList[i]>database.getUserName(buddyList[i])</a>
+                </li>
             </div>';
 */
 	// }
