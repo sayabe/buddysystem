@@ -59,7 +59,7 @@ router.get('/yourBuddyList',function(req,res,next){
                 </h3>
             </div>';
 */
-	}
+	// }
 
 
 	console.log('buddy list end point');
